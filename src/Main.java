@@ -1,30 +1,22 @@
-import java.io.File;
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args)
-    {
-        ckeckFile();
-    }
 
-    public static void ckeckFile() {
-        int attempt = 1;
-        boolean fileExists;
-        boolean isDerictory;
-        while (true) {
-            System.out.println("Введите путь к файлу:");
-            String path = new Scanner(System.in).nextLine();
-            File file = new File(path);
-            fileExists = file.exists();
-            isDerictory = file.isDirectory();
-            if (!fileExists) {
-                System.out.println("Путь к файлу указан неверно!,");continue;
-            }else if (isDerictory){
-                System.out.println("Указан путь к папке!");continue;
-            }else if (fileExists){
-                System.out.println("Путь указан верно. Это файл номер №" + attempt);
-                attempt++;
-            }
-        }
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Введите первое число:");
+        int firstNumber = new Scanner(System.in).nextInt();
+        System.out.println("Введите второе число:");
+        int secondNumber = new Scanner(System.in).nextInt();
+
+        int sum = firstNumber+secondNumber;
+        int difference = firstNumber-secondNumber;
+        int multiply = firstNumber*secondNumber;
+        double quotient = (double)firstNumber/secondNumber;
+
+        System.out.println("Сумма чисел "+firstNumber+" и "+secondNumber+" равна "+sum);
+        System.out.println("Разность чисел "+firstNumber+" и "+secondNumber+" равна "+difference);
+        System.out.println("Произведение чисел "+firstNumber+" и "+secondNumber+" равно "+multiply);
+        System.out.println("Частное чисел "+firstNumber+" и "+secondNumber+" равно "+quotient);
     }
 }
